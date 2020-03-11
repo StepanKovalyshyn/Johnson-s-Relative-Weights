@@ -1,0 +1,23 @@
+{
+  "name": "johnsons-relative-weights",
+  "version": "1.0.0",
+  "description": "Johnson's Relative Weights",
+  "main": "index.js",
+  "dependencies": {
+    "mathjs": "^3.17.0",
+    "ml-matrix": "^6.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StepanKovalyshyn/Johnson-s-Relative-Weights.git"
+  },
+  "author": "Stepan Kovalyshyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StepanKovalyshyn/Johnson-s-Relative-Weights/issues"
+  },
+  "homepage": "https://github.com/StepanKovalyshyn/Johnson-s-Relative-Weights#readme"
+}
