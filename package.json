@@ -1,6 +1,6 @@
 {
   "name": "johnsons-relative-weights",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Johnson's Relative Weights",
   "main": "index.js",
   "dependencies": {

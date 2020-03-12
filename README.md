@@ -1,6 +1,6 @@
 ## Johnson-s-Relative-Weights
 
-This package allows to proceed Johnson's Reletive Weights algorithm with JavaScript language.
+This package allows to proceed Johnson's Relative Weights algorithm with JavaScript language.
 
 It accepts two parameters: correlation matrix and dependent variable.
 
@@ -34,4 +34,6 @@ const jrwResults = jrwAnalysis(
 }
 ```
 
+#### Additional info:
+https://medium.com/@stepan.kovalyshyn/johnsons-relative-weights-analysis-implementation-with-javascript-d85393c0bbb4
 
