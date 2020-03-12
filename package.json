@@ -1,12 +1,17 @@
 {
   "name": "johnsons-relative-weights",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Johnson's Relative Weights",
   "main": "index.js",
   "dependencies": {
     "mathjs": "^3.17.0",
     "ml-matrix": "^6.4.1"
   },
+  "keywords": [
+    "Johnson's Relative Weights",
+    "jrw",
+    "rwa"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
