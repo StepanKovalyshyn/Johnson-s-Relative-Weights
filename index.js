@@ -8,7 +8,7 @@ const extractMatrix = function (matrix, matrixType) {
     range(0, matrix.columns).forEach(j => {
       if (matrixType === 'matrix-transposed') {
         newRow.push(parseFloat(matrix.get(j, i)));
-      } else if (	matrixType === 'eigen-vectors-matrix') {
+      } else if (matrixType === 'eigen-vectors-matrix') {
         newRow.push(parseFloat(matrix.get(i, matrix.rows - 1 - j)));
       } else {
         newRow.push(parseFloat(matrix.get(i, j)));
@@ -19,9 +19,9 @@ const extractMatrix = function (matrix, matrixType) {
   return extractedMatrix;
 }
 
-const range = function (start, end){
-    const length = end - start;
-    return Array.from({ length }, (_, i) => start + i);
+const range = function (start, end) {
+  const length = end - start;
+  return Array.from({ length }, (_, i) => start + i);
 }
 
 const calculateRSquared = function (partialEffect) {
@@ -34,11 +34,11 @@ const calculateRSquared = function (partialEffect) {
 
 const createDiagonalMatrixOfEigenValues = function (eigenValues) {
   let diagonalMatrixOfEigenValues = [];
-    range(0, eigenValues.length).forEach(i => {
-      let matrixRow = [];
-      range(0, eigenValues.length).forEach(j => {
-        matrixRow.push(i === j ? eigenValues[i] : 0)
-      }
+  range(0, eigenValues.length).forEach(i => {
+    let matrixRow = [];
+    range(0, eigenValues.length).forEach(j => {
+      matrixRow.push(i === j ? eigenValues[i] : 0)
+    }
     )
     diagonalMatrixOfEigenValues.push(matrixRow);
   });
@@ -76,6 +76,8 @@ const computeCorrelationMatrixBetweenIndependentVariables = function (correlatio
 }
 
 const proceedJohnsonReletiveWeightsAlgorithm = function (correlationMatrix, dependentVariable) {
+
+  if (!new Matrix(correlationMatrix).isSymmetric()) { throw "Matrix is not symmetric" };
 
   // Step 1. Compute correlation matrix between independent variables   
   const rxy = computeCorrelationMatrixBetweenDependentVariables(correlationMatrix, dependentVariable);
@@ -116,7 +118,7 @@ const proceedJohnsonReletiveWeightsAlgorithm = function (correlationMatrix, depe
   // Step 9. To calculate raw relative weights as percentage of R-Square, divide raw relative weights by r-square and then multiply it by 100.
   const rescaledRawRelativeWeights = rawRelativeWeights.map(value => value / rSquared * 100);
 
-  return { rawRelativeWeights, rescaledRawRelativeWeights };
+  return { rawRelativeWeights, rescaledRawRelativeWeights, rSquared };
 }
 
 module.exports = proceedJohnsonReletiveWeightsAlgorithm;
