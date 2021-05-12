@@ -4,7 +4,7 @@
   "description": "Johnson's Relative Weights",
   "main": "index.js",
   "dependencies": {
-    "mathjs": "^3.17.0",
+    "mathjs": "^7.5.1",
     "ml-matrix": "^6.4.1"
   },
   "keywords": [
